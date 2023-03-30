@@ -9,6 +9,6 @@ import cloudflare from '@astrojs/cloudflare';
 export default defineConfig({
   integrations: [react(), tailwind()],
   output: "server",
-  adapter: cloudflare({ mode: "advanced" })
+  adapter: cloudflare({ mode: "directory" })
 
 });
