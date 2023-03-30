@@ -1,0 +1,14 @@
+---
+import Home from 'components/Home/Home';
+import SideNav from 'components/SideNav';
+import Nav from '../components/Nav';
+import Layout from '../layouts/Layout.astro';
+
+---
+
+<Layout title="Home">
+	<Nav client:load/>
+	<SideNav activeMenu={'home'} client:load/>
+	<Home client:load />
+</Layout>
+
