@@ -4,6 +4,10 @@ import SideNav from 'components/SideNav';
 import Nav from '../components/Nav';
 import Layout from '../layouts/Layout.astro';
 
+
+Astro.response.headers.set('Cache-Control', 'max-age=86400, must-revalidate');
+
+
 ---
 
 <Layout title="Home">

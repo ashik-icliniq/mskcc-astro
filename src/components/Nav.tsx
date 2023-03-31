@@ -8,7 +8,7 @@ function Nav() {
 
     const cookies = new Cookies();
     const loginIn = () => {
-        cookies.set('session', '89aus9d8us9daud9UD98snaud9a8sduasnd', { path: '/', maxAge: 300, secure: true, httpOnly: true });
+        cookies.set('session', '89aus9d8us9daud9UD98snaud9a8sduasnd', { path: '/', maxAge: 300, secure: true });
         isLoggedIn.set(true)
     }
 
