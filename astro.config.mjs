@@ -11,5 +11,5 @@ export default defineConfig({
   integrations: [react(), tailwind()],
   output: "server",
   // adapter: vercel()
-  adapter: cloudflare({ mode: "advanced" })
+  adapter: cloudflare({ mode: "directory" })
 });
