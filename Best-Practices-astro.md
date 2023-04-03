@@ -3,7 +3,7 @@
 ### Do's
 - Project Structure must be followed as mentioned in https://docs.astro.build/en/core-concepts/project-structure/
 - Fetch(...) in astro - This fetch call will be executed at build time, and the data will be available to the component template for generating dynamic HTML.
-- Use client directives (or) SSR Hydration only when they is an interactive events in the component.
+- Use client directives (or) SSR Hydration only when there is a need for interactive events in the component.
 - Keep the parent component as .astro file for component having both SSR Hydration and static file.
 - Analyze pure SSR component and SSR Hydration components foremost .
 - Creating a separate component for rendering images can help keep your code organized and improve reusability.
