@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react'
 import { Card, Button } from 'flowbite-react'
 // import { RiArrowRightSLine } from 'react-icons/ri/index'
 import { isLoggedIn } from 'stores/authStore';

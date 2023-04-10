@@ -6,6 +6,7 @@ export const isLoggedIn = atom(false);
 
 onMount(isLoggedIn, () => {
     const cookies = new Cookies();
-    cookies.get('session') && isLoggedIn.set(!isLoggedIn.get())
+
+    cookies.get('session') && isLoggedIn.set(true)
 })
 

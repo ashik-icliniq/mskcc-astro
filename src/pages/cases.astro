@@ -1,14 +1,18 @@
 ---
-import Cases from 'components/Cases/Cases';
+import Cases from 'components/Cases';
 import SideNav from 'components/SideNav';
 import Nav from '../components/Nav';
 import Layout from '../layouts/Layout.astro';
 
+const cookie = Astro.request.headers.get('cookie');
+if (!cookie.includes('session')) {
+  return Astro.redirect('/login');
+}
 
 ---
 
 <Layout title="Cases">
-	<Nav client:load/>
+	<Nav />
 	<SideNav activeMenu="cases" client:load/>
 	<Cases client:load />
 </Layout>

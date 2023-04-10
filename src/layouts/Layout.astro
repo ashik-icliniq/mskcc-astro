@@ -4,7 +4,7 @@ export interface Props {
 }
 
 const { title } = Astro.props;
-
+import "../styles/global.css";
 ---
 
 <!DOCTYPE html>
@@ -14,32 +14,56 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
 		<title>{title}</title>
 	</head>
 	<body>
+		<div id="preloader" class="loader-wrapper">
+			<div class="loader"></div>
+		</div>
 		<slot />
 	</body>
 </html>
 <style is:global>
 	:root {
 		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent)),
+			#da62c4 30%,
+			white 60%
+		);
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
+		background-color: white;
 	}
 	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+			DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
 	}
 	* {
-    font-size: 16px;
+		font-size: 16px;
 	}
 
-	.message-card  >  div{ 
+	.card-with-no-padding > div {
 		padding: 0px;
 	}
-
 </style>
+<script>
+	window.onload = function () {
+		document.getElementById("preloader").style.display = "none";
+	};
+
+	const elements = document.querySelectorAll("a");
+	const count = elements.length;
+	for (let i = 0; i < count; i++) {
+		const a : any = elements[i];
+		a.addEventListener("click", function () {
+			document.getElementById("preloader").style.display = "flex";
+		});
+	}
+</script>

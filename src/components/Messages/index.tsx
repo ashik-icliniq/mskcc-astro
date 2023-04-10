@@ -1,27 +1,14 @@
 import { Card, Button } from 'flowbite-react'
-import React, {useState, useEffect} from 'react'
 
 function Messages() {
-
-    const [messageList, setMessageList] = useState();
-
-    useEffect(() => {
-      fetch('https://api.npoint.io/86f5a7d99214f39b2d4f')
-        
-    
-     
-    }, [])
-    
 
     return (
         <div className='container mx-auto px-10 pt-32'>
             <h4 className='text-base text-black'>Messages</h4>
-            <Card className='mt-5 w-9/12 p-0 message-card '>
+            <Card className='mt-5 w-9/12 p-0 card-with-no-padding '>
                 <div className='flex'>
-                    <div className='rounded-l-lg h-44 bg-blue-200 w-12 flex items-center	'>
-                        <span className='origin-center -rotate-90 tracking-widest text-blue-700'>
-                            Active
-                        </span>
+                    <div className='rounded-l-lg h-44 bg-blue-200 w-12 flex items-center justify-center'>
+                        <p className='-rotate-90 absolute text-blue-700 uppercase tracking-widest'>Active</p>
                     </div>
                     <div className='flex w-full'>
                         <div className="grid w-4/5 grid-cols-2 gap-4 m-6">
@@ -52,7 +39,7 @@ function Messages() {
                 </div>
 
             </Card>
-            
+
         </div>
     )
 }

@@ -1,19 +1,19 @@
 export const SIDEMENU = [
     {
         title : 'Home',
-        icon : 'AiFillHome'
+        icon : 'fa fa-home'
     },
     {
         title : 'Cases',
-        icon : 'AiOutlineFileText'
+        icon : 'fa fa-file'
     },
     {
         title : 'Messages',
-        icon : 'TbMessages'
+        icon : 'fa fa-envelope'
     },
     {
         title : 'Account',
-        icon : 'MdOutlinePersonOutline'
+        icon : 'fa fa-user'
     },
     
 ]
