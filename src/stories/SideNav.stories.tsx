@@ -2,7 +2,7 @@
  
 
 import React from 'react';
-import { within, fireEvent, userEvent, screen } from '@storybook/testing-library';
+import { within, fireEvent} from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
 import SideNav from '../components/SideNav';
 import "./global-test.css";
@@ -13,9 +13,20 @@ import type { Meta, StoryFn } from "@storybook/react";
 export default {
   title: 'Tests/SideNav',
   component: SideNav,
+  argTypes: {
+    activeMenu: { control : 'radio'}
+  }
 } as Meta;
 
-const Template : StoryFn = (args) => <SideNav {...args} activeMenu='home' />;
+
+const hoverTest = async (canvas: any, elem: any) => {
+  // Mouse Hover and Check Color
+  const hoverElem = canvas.getByText(elem).parentElement?.parentElement?.parentElement;
+  await fireEvent.mouseOver(hoverElem);
+  await expect(hoverElem).toHaveClass('hover:bg-sky-100')
+}
+
+const Template : StoryFn = (args) => <SideNav activeMenu={'home'} {...args} />;
 
 export const SideNavTest = Template.bind({});
 
@@ -27,5 +38,18 @@ export const SideNavTest = Template.bind({});
 // };
 
 SideNavTest.play = async ({ canvasElement }) => {
+
   const canvas = within(canvasElement);
+  const logoutHoverCheck = canvas.getAllByRole('link');
+  
+
+
+  CONSTANTS.SIDEMENU.map((options) => {
+    hoverTest(canvas, options.title)
+  })
+  logoutHoverCheck.map((res) => {
+    res.firstElementChild?.classList.contains('fa-sign-out') &&  expect(res.firstElementChild).toHaveClass('hover:text-red-500')
+  })
+
+
 };

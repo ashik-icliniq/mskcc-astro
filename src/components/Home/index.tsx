@@ -10,7 +10,7 @@ function Home() {
  
   return (
     <>
-      {$isLoggedIn && <div className='container mx-auto px-10 pt-32'>
+   <div className='container mx-auto px-10 pt-32'>
         <h4 className='font-medium	text-lg text-gray-700'>Welcome to MSK India</h4>
         <div className="grid grid-cols-3 gap-10 mt-5 mb-12">
           <Card className='h-16 '>
@@ -42,7 +42,7 @@ function Home() {
 
         </div>
         <hr />
-      </div>}
+      </div>
 
     </>
   )

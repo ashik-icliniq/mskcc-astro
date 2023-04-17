@@ -28,5 +28,6 @@ export const DraftTest = Template.bind({});
 
 DraftTest.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
-
+  const clickButton = canvas.getByText('Resume')
+  await userEvent.click(clickButton);
 };

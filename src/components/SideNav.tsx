@@ -5,11 +5,10 @@ import { Cookies } from 'react-cookie'
 
 
 type SideNavProp = {
-    activeMenu: string,
-    email: string
+    activeMenu:  'home' | 'cases' | 'messages' | 'account';
 }
 
-function SideNav({ activeMenu, email }: SideNavProp) {
+function SideNav({ activeMenu }: SideNavProp) {
 
     const logout = () => {
         const cookies = new Cookies();
@@ -41,7 +40,6 @@ function SideNav({ activeMenu, email }: SideNavProp) {
                             )
                         })}
 
-<Sidebar.Item>   {email}</Sidebar.Item>
 
                     </Sidebar.ItemGroup>
                 </Sidebar.Items>

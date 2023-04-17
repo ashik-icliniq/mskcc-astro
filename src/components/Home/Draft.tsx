@@ -1,13 +1,9 @@
 import { Button, Card } from 'flowbite-react'
 
-type DraftProp = {
-    email: string
-}
 
-function Draft({email} : DraftProp) {
+function Draft() {
     return (
         <div className='container mx-auto px-10 pt-32'>
-            <h4 className='font-medium	text-lg text-gray-700 '>{email}</h4>
             <div className="grid grid-cols-3 gap-4 pt-6 h-72">
                 <div className="col-span-2 ">
                     <Card className='w-2/3	shadow-none !bg-gray-200 border-none h-full'>

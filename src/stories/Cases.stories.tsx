@@ -29,4 +29,6 @@ export const CasesTest = Template.bind({});
 CasesTest.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
 
+  const clickButton = canvas.getByText('View Cases')
+  await userEvent.click(clickButton);
 };

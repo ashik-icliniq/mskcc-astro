@@ -28,4 +28,6 @@ export const MessagesTest = Template.bind({});
 MessagesTest.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
 
+  const clickButton = canvas.getByText('Send Message')
+  await userEvent.click(clickButton);
 };
