@@ -18,7 +18,7 @@ function Home() {
               <p className='font-normal	'>
                 You have received a new message
               </p>
-              <Button color='success'>
+              <Button>
                 View
               </Button>
             </div>

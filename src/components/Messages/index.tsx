@@ -30,7 +30,7 @@ function Messages() {
                             </div>
                         </div>
                         <div className='w-1/5 flex items-center justify-center'>
-                            <Button className='bg-blue-800 hover:bg-blue-600'>
+                            <Button color='success' className='bg-blue-800 hover:bg-blue-600'>
                                 Send Message
                             </Button>
                         </div>
